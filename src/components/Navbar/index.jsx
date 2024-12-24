@@ -3,7 +3,7 @@ const Navbar = () => {
     return (
     <>
     <header className="flex justify-around p-4 text-white bg-teal-700 sm:gap-4 lg:gap-8">
-        <div className="">
+        <div className="flex gap-3">
             <Link to="/">Home</Link>
             <Link to="/">Contact</Link>
             <Link to="/">Vehicle List</Link>
