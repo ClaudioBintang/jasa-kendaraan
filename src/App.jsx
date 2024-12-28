@@ -22,20 +22,8 @@ function App() {
         </ProtectedPages>
         } />
 
-<<<<<<< HEAD
-      <Route path='/Profil' element={
-        <ProtectedPages>
-          <Profilpage />
-        </ProtectedPages>
-          } />
-
-      <Route path='/Login' element={<Login />} />
-
-      <Route path='/Register' element={<Register />} />
-=======
       <Route path="/login" element={<Login />} />
       
->>>>>>> faca21e1b66ce2157e2b1160aa1ee4408bcd7aa2
     </Routes>
     </BrowserRouter>
   )
