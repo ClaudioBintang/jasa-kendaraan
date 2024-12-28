@@ -13,7 +13,7 @@ const Navbar = () => {
     };
 
     return (
-<<<<<<< HEAD
+
         <>
             <header className="flex justify-between p-4 text-gray-700 bg-white shadow-lg sm:gap-4 lg:gap-8">
                 <div className="flex items-center gap-4 font-medium">
@@ -37,23 +37,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-=======
-    <>
-    <header className="flex justify-around p-4 text-white bg-teal-700 sm:gap-4 lg:gap-8">
-        <div className="flex gap-3">
-            <Link to="/">Home</Link>
-            <Link to="/">Contact</Link>
-            <Link to="/">Vehicle List</Link>
-        </div>
-        <div className="">
-            <ul className="flex gap-4 font-medium">
-                <li>Login</li>
-                <li>Profil</li>
-            </ul>
-        </div>
-    </header>
-    </>
-    )
-}
-export default Navbar
->>>>>>> faca21e1b66ce2157e2b1160aa1ee4408bcd7aa2
+

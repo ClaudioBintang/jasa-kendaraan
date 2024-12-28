@@ -14,9 +14,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/Detail" element={
-        <ProtectedPages> 
+        // <ProtectedPages> 
           <Detailpage />
-        </ProtectedPages>
+        // </ProtectedPages>
         } />
       <Route path="/Profil" element={
         <ProtectedPages>

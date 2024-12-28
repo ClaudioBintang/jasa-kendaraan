@@ -1,4 +1,5 @@
 import axios from "axios"
+import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Navbar from "../../components/Navbar"
@@ -7,9 +8,11 @@ import Brv from "../../assets/BRV.png"
 import Hilux from "../../assets/picture.png"
 import Crv from "../../assets/HILUX.png"
 import Krv from "../../assets/HRV.png"
+import { ArrowRight } from "lucide-react"
 const Detailpage = () => {
     const [data, setData] = useState([])
     const { id } = useParams();
+    
 const [pagination, setPagination] = useState([
   {
     current_Page: 1,
@@ -113,12 +116,11 @@ const [pagination, setPagination] = useState([
                     </div>
                 )
             })}
-            {current_Page == total_pages ? (
-                <button className="w-full py-4 font-semibold transition-colors duration-300 bg-teal-600 rounded-lg" onClick={() => handlePageChange(current_Page - 1)}>prev page</button>
-            ) : (
-                <button className="w-full py-4 font-semibold transition-colors duration-300 bg-teal-600 rounded-lg" onClick={() => handlePageChange(current_Page + 1)}>next page</button>
-            )}
-            <button></button>
+              <div className="flex items-center justify-center gap-4">
+                <button className="w-full py-3 font-semibold transition-colors duration-300 bg-teal-600 rounded-lg" onClick={ () => handlePageChange(pagination.current_Page - 1)}>prev page</button>
+                <button className="w-full py-3 font-semibold transition-colors duration-300 bg-teal-600 rounded-lg" onClick={ () => handlePageChange(pagination.current_Page + 1)}>next page</button>
+              </div>
+            
         </div>
         <Footer />
         </>
