@@ -22,9 +22,8 @@ const Login = () => {
         setIsLoading(true);
         try {
             const { data } = await axios.post("https://reqres.in/api/login", credentials);
-            localStorage.setItem("access_Token", data.accessToken);
-            localStorage.setItem("refresh_Token", data.refreshToken);
-            setMessage({ success: "Redirecting...", error: "" });
+            localStorage.setItem("access_Token", data.token);
+            setMessage({ success: "Redirecting..."});
             setTimeout(() => navigate("/"), 2000);
         } catch (error) {
             const errorMsg = error.response?.data?.error || "An unexpected error occurred";
