@@ -10,6 +10,7 @@ import Krv from "../../assets/HRV.png"
 import { Users, Leaf, HeadphonesIcon } from 'lucide-react'
 import { ArrowRight, Calendar, Car, Clock, MapPin, PhoneCall, Settings } from 'lucide-react'
 const Homepage = () => {
+<<<<<<< HEAD
 
 const stats = [
   {
@@ -173,6 +174,18 @@ const popularRentals = [
           </div>
         </div>
       </section>
+=======
+    
+    return (
+        <>
+        <Navbar />
+        <header>
+            <aside>
+                <div>
+                    <h3>lihatt, kami punya banyak tenaga kerja yang berkualitas</h3>
+                </div>
+            </aside>
+>>>>>>> faca21e1b66ce2157e2b1160aa1ee4408bcd7aa2
         </header>
     {/* section area */}
     <main className="min-h-screen">
