@@ -62,8 +62,12 @@ const [pagination, setPagination] = useState([
             )
         } catch (error) {
             console.log(error);
-            
         }
+    }
+    const handlePageChange = (newPage) => {
+      if (newPage > 0 && newPage <= pagination.total_pages) {
+        setPagination((prevState) => ({ ...prevState, current_Page: newPage }));
+      }
     }
     useEffect(() => {
         getReqres(pagination.current_Page);
@@ -109,6 +113,12 @@ const [pagination, setPagination] = useState([
                     </div>
                 )
             })}
+            {current_Page == total_pages ? (
+                <button className="w-full py-4 font-semibold transition-colors duration-300 bg-teal-600 rounded-lg" onClick={() => handlePageChange(current_Page - 1)}>prev page</button>
+            ) : (
+                <button className="w-full py-4 font-semibold transition-colors duration-300 bg-teal-600 rounded-lg" onClick={() => handlePageChange(current_Page + 1)}>next page</button>
+            )}
+            <button></button>
         </div>
         <Footer />
         </>
