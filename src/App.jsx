@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import Detailpage from './pages/Detailpage'
- 
+import Login from './pages/Login'
+import Profilpage from './pages/Profilpage'
+import Register from './pages/Register'
 import './index.css'
+import ProtectedPages from './routes/protectedpages'
 
 function App() {
 
@@ -10,9 +13,21 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Homepage />} />
-      
-      <Route path="/Vehicle" element={<Detailpage />} />
+      <Route path="/Detail" element={
+        <ProtectedPages> 
+          <Detailpage />
+        </ProtectedPages>
+        } />
 
+      <Route path='/Profil' element={
+        <ProtectedPages>
+          <Profilpage />
+        </ProtectedPages>
+          } />
+
+      <Route path='/Login' element={<Login />} />
+
+      <Route path='/Register' element={<Register />} />
     </Routes>
     </BrowserRouter>
   )
