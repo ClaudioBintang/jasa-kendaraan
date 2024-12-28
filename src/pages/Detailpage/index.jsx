@@ -10,9 +10,8 @@ import Krv from "../../assets/HRV.png"
 const Detailpage = () => {
     const [data, setData] = useState([])
     const { id } = useParams();
-const [currentPage, setCurrentPage] = useState([
+const [pagination, setPagination] = useState([
   {
-    page : 2,
     current_Page: 1,
     per_page: null,
     total: null,
@@ -50,17 +49,25 @@ const [currentPage, setCurrentPage] = useState([
 
     const getReqres = async (page) => {
         try {
-            const response = await axios.get(`https://reqres.in/api/users?page=${page}&per_page${perPage}`);
+            const response = await axios.get(`https://reqres.in/api/users?page=${page}&per_page=${pagination.per_page}`);
             console.log(response);
             setData(response.data.data)
+            setPagination(
+              {
+              current_Page: response.data.page,
+              per_page: response.data.per_page,
+              total: response.data.total,
+              total_pages: response.data.total_pages,
+              }
+            )
         } catch (error) {
             console.log(error);
             
         }
     }
     useEffect(() => {
-        getReqres()
-      }, [id])
+        getReqres(pagination.current_Page);
+      }, [pagination.current_Page, id])
     return (
         <>
         <Navbar />
@@ -99,7 +106,6 @@ const [currentPage, setCurrentPage] = useState([
                         <p className="mb-1 text-lg font-semibold text-gray-800">{item.first_name} {item.last_name}</p>
                         <p className="mb-4 text-sm font-semibold text-gray-600">{item.email}</p>
                         <button className="w-full py-4 font-semibold transition-colors duration-300 bg-teal-600 rounded-lg hover:bg-teal-700">Call now</button>
-                        
                     </div>
                 )
             })}
