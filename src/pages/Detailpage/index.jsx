@@ -78,7 +78,7 @@ const [pagination, setPagination] = useState([
     return (
         <>
         <Navbar />
-        <div className="grid grid-cols-1 gap-6 mb-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 py-8 mb-12 md:grid-cols-2 lg:grid-cols-4">
             {popularRentals.map((rental) => (
               <div key={rental.id} className="p-4 border rounded-lg ">
                 <img
