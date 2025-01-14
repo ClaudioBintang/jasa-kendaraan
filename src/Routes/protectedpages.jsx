@@ -4,7 +4,7 @@ const ProtectedPages = () => {
     if (!token && token === null) {
         return <Navigate to="/Login" />
     }
-    return <>children || <Outlet /></>
+    return <>{children || <Outlet />}</>
    
 }
 export default ProtectedPages
